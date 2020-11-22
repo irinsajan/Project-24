@@ -4,10 +4,6 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
-function preload()
-{
-	
-}
 
 function setup() {
 	createCanvas(800, 700);
@@ -17,10 +13,10 @@ function setup() {
 	world = engine.world;
 
 	box1 = new Box (570,650,200,20);
-    box2 = new Box (660,610,20,100);
+        box2 = new Box (660,610,20,100);
 	box3 = new Box (470,610,20,100);
 	
-	paper = new Paper (160,600,50,50);
+	paper = new Paper (160,600,10);
 
 	ground = new Ground (200,670,10000,20);
 	
@@ -47,8 +43,8 @@ function draw() {
 }
 
 function keyPressed(){
-	if(keyDown === "up"){
-		Matter.Body.applyForce(paperObject,body,paperObject.body.position,{x:85,y:-85});
+	if(keyCode === UP_ARROW){
+		Matter.Body.applyForce(paper.body,paper.body.position,{x:12,y:-12});
 	}
 }
 
